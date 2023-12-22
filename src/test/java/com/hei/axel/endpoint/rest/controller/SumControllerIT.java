@@ -15,10 +15,10 @@ public class SumControllerIT extends FacadeIT {
     @Test
     void test_add_big_number(){
         assertEquals(
-                new BigInteger("10"),
+                "10",
                 sumController.addBigInteger(
-                        new BigInteger("9"),
-                        new BigInteger("1")
+                        "9",
+                        "1"
                 )
         );
     }

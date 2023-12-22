@@ -9,9 +9,12 @@ import java.math.BigInteger;
 @RestController
 public class SumController {
     @GetMapping("/big-sum")
-    public BigInteger addBigInteger(
-            @RequestParam(name = "a", defaultValue = "0") BigInteger a,
-            @RequestParam(name = "b", defaultValue = "0") BigInteger b) {
-        return a.add(b);
+    public String addBigInteger(
+            @RequestParam(name = "a", defaultValue = "0") String a,
+            @RequestParam(name = "b", defaultValue = "0") String b) {
+        return String.valueOf(
+                BigInteger.valueOf(Long.parseLong(a))
+                        .add(BigInteger.valueOf(Long.parseLong(b)))
+        );
     }
 }
